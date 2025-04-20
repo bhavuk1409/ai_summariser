@@ -1,6 +1,6 @@
 fastapi
 transformers
-whisper
+openai-whisper
 gunicorn==19.7.1
 uvicorn[standard]
 pydantic
