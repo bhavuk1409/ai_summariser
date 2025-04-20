@@ -41,7 +41,7 @@ async def process_video(request: VideoRequest):
 
         # Step 2: Extract Audio
         print("🎵 Extracting audio...")
-        extract_audio(VIDEO_PATH, AUDIO_PATH)
+        extract_audio(VIDEO_PATH, AUDIO_PATH) #/Users/bhavukagrawal/FastAPI_Tut/app.py
 
         # Step 3: Transcribe Audio
         print("📝 Transcribing audio...")
