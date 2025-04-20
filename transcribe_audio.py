@@ -1,20 +1,19 @@
 import whisper
-import os
+import logging
 
 def transcribe_audio(audio_path):
-    print(f"🔍 Transcribing file at: {audio_path}")
-    
-    if not os.path.exists(audio_path):
-        print("❌ File not found.")
-        return ""
-
+    model = whisper.load_model("base")  # Adjust model size as needed
     try:
-        model = whisper.load_model("base")  # You can use "small", "medium", or "large" too
+        # Perform transcription
         result = model.transcribe(audio_path)
         transcript = result.get("text", "")
+        
+        # Print and return the transcript
         print("\n📝 Transcription Completed:")
         print(transcript)
         return transcript
+    
     except Exception as e:
-        print(f"❌ Transcription failed: {e}")
-        return ""
+        # Log the error if transcription fails
+        logging.error(f"❌ Transcription failed: {e}")
+        return {"error": "Transcription failed", "message": str(e)}  # Return error response
