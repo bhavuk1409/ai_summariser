@@ -3,3 +3,8 @@ transformers
 whisper
 gunicorn==19.7.1
 uvicorn[standard]
+pydantic
+torch
+requests
+ffmpeg-python
+python-multipart
