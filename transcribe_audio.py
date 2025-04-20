@@ -2,7 +2,7 @@ import whisper
 import logging
 
 def transcribe_audio(audio_path):
-    model = whisper.load_model("base")  # Adjust model size as needed
+    model = whisper.load_model("tiny")  # Adjust model size as needed
     try:
         # Perform transcription
         result = model.transcribe(audio_path)
